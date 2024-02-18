@@ -18,6 +18,31 @@
     <link rel="stylesheet" href="asset/style/style.css">
 </head>
 <body class="font-raleway">
+    <section id="modal-section" class="hidden">
+      <div class="h-screen w-screen bg-black fixed top-0 z-10 flex justify-center items-center">
+        <div class="flex justify-center items-center text-center ">
+          <div class="p-14 bg-white rounded-xl space-y-5">
+            <div class="flex justify-center">
+              <img src="asset/images/success.png" alt="">
+            </div>
+            <div class="text-[#27AE60] font-raleway font-bold text-2xl">
+              <h1>SUCCESS</h1>
+            </div>
+            <div>
+              <p class="space-y-4">
+                <span class="text-xl text-[#4A4A4A] font-raleway font-medium">Thank you for Booking Our Bus Seats. 
+                  We are working hard to find the best service and deals for you.</span><br> 
+                <span class="text-xl font-light text-[#4A4A4A]">Shortly you will find a confirmation in your email.</span></p>
+            </div>
+            <div>
+              <button id="continue" class="py-4 px-11 rounded-full text-inter font-semibold text-white bg-[#27AE60]">Continue</button>
+            </div>
+  
+          </div> 
+        </div>       
+      </div>
+
+    </section>
     <section>
         <div class="container mx-auto px-3">
             <div class="navbar bg-base-100 py-8">
@@ -111,51 +136,68 @@
     <section>
       <div class="mt-32">
         <div class="container mx-auto px-3">
-          <div class="flex flex-col lg:flex-row gap-6">
-            <div class="flex-1 rounded-3xl p-5 md:p-11 bg-[#FFBF0F] gap-4 md:gap-7 flex items-center">
-              <div class="flex-1 lg:space-y-3 border-r-2 border-dashed">
-                <div class="text-lg md:text-[40px] font-extrabold font-inter text-[#352C11]">
-                  <h1>15% OFF</h1>
-                </div>
-                <div class="font-inter font-semibold text-base md:text-xl text-[#352C11]">
-                  <p>on your next putchase</p>
-                </div>
-                <div class="font-inter font-medium text-base md:text-lg text-[#816310]">
-                  <span>use by january 2024</span>
-                </div>
-              </div>
-              <div class="flex-1 md:w-[207px] md:space-y-3 relative text-center md:text-left">
-                <div class=" font-raleway font-bold text-lg md:text-3xl text-[#030712]">
-                  <h1>NEW15</h1>
-                </div>
-                <div class="font-raleway font-medium text-base md:text-xl text-[#816310]">
-                  <span>Coupon Code </span>
-                </div>
-                
-              </div>
+            <div class="font-raleway text-[40px] text-center text-#030712 font-extrabold">
+              <h1>Best offers for you</h1>
             </div>
-            <div class="flex-1 rounded-3xl p-5 md:p-11 bg-[#F78C9C] gap-4 md:gap-7 flex items-center">
-              <div class="flex-1 lg:space-y-3 border-r-2 border-dashed">
-                <div class="text-lg md:text-[40px] font-extrabold font-inter text-[#352C11]">
-                  <h1>15% OFF</h1>
+            <!--  -->
+            <div class="flex gap-20 mt-14 justify-between items-center">
+              <div class="flex-1 rounded-xl bg-[#FFBF0F] grid grid-cols-6">
+                <div class="col-span-3 p-8 space-y-2">
+                  <div class="text-[40px] mt-2 font-inter font-[900]">
+                    <h1>15% OFF</h1>
+                  </div>
+                  <div class="text-xl font-inter text-[#030712CC] font-medium">
+                    <h1>on your next purchase</h1>
+                  </div>
+                  <div class="text-lg font-medium text-[#03071280] font-inter">
+                    <span>use by january 2024</span>
+                  </div>
                 </div>
-                <div class="font-inter font-semibold text-base md:text-xl text-[#352C11]">
-                  <p>on your next putchase</p>
+                <div class="col-span-1 flex justify-center">
+                  <img src="asset/images/cupon-devider.png" alt="">
                 </div>
-                <div class="font-inter font-medium text-base md:text-lg text-[#816310]">
-                  <span>use by january 2024</span>
+                <div class="col-span-2 flex justify-center items-center">
+                  <div>
+                    <div class="font-raleway text-[32px] font-bold text-[#030712]">
+                      <h1>NEW15</h1>
+                    </div>
+                    <div class="text-xl font-raleway font-medium text-[#03071266]">
+                      <span>Coupon Code</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="flex-1 md:w-[207px] md:space-y-3 relative text-center md:text-left">
-                <div class=" font-raleway font-bold text-lg md:text-3xl text-[#030712]">
-                  <h1>NEW15</h1>
+              <div class="flex-1 rounded-xl bg-[#F78C9C] grid grid-cols-6">
+                <div class="col-span-3 p-8 space-y-2">
+                  <div class="text-[40px] mt-2 font-inter font-[900]">
+                    <h1>20% OFF</h1>
+                  </div>
+                  <div class="text-xl font-inter text-[#030712CC] font-medium">
+                    <h1>on your next purchase</h1>
+                  </div>
+                  <div class="text-lg font-medium text-[#03071280] font-inter">
+                    <span>use by january 2024</span>
+                  </div>
                 </div>
-                <div class="font-raleway font-medium text-base md:text-xl text-[#816310]">
-                  <span>Coupon Code </span>
+                <div class="col-span-1 flex justify-center">
+                  <img src="asset/images/cupon-devider.png" alt="">
                 </div>
-               
+                <div class="col-span-2 flex justify-center items-center">
+                  <div>
+                    <div class="font-raleway text-[32px] font-bold text-[#030712]">
+                      <h1>Couple 20</h1>
+                    </div>
+                    <div class="text-xl font-raleway font-medium text-[#03071266]">
+                      <span>Coupon Code</span>
+                    </div>
+                  </div>
+                </div>
               </div>
+              
+              
+              
             </div>
+            <!--  -->
           </div>
           <div class="flex justify-center items-center mt-16">
             <button class="px-8 py-5 rounded-xl border-2 border-[#1DD100] text-xl font-bold text-[#1DD100] font-raleway">See All Offers</button>
@@ -176,8 +218,8 @@
           </div>
           <!-- ticket section -->
           <div class="p-8">
-            <div class="grid grid-cols-5 bg-white gap-5 p-8 rounded-3xl">
-              <div class="col-span-4 space-y-6 pr-10 border-r-2 border-dashed border-[#1DD100]">
+            <div class="grid grid-row md:grid-cols-5 bg-white gap-4 md:gap-5 p-8 rounded-3xl">
+              <div class="col-span-4 space-y-6 pr-10 border-b-2 md:border-b-0 md:border-r-2 border-dashed border-[#1DD100]">
                 <div class="flex justify-between items-center">
                   <div class="flex justify-between items-center">
                     <div class="flex items-center gap-5">

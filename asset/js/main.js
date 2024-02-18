@@ -132,18 +132,18 @@ function checkInput(input){
             nextBtn.removeAttribute("disabled");
             nextBtn.classList.replace("bg-[#979b9638]","bg-[#1DD100]");
             nextBtn.addEventListener("click",function(){
-                alert("yea hu")
+                const modal = document.getElementById("modal-section");
+                const body = document.querySelector("body");
+                modal.classList.remove("hidden");
+                body.style.overflow = "hidden";
+
             });
         }else{
             nextBtn.setAttribute("disabled",true);
             nextBtn.classList.replace("bg-[#1DD100]","bg-[#979b9638]");
         }
-    }  
-    // 
-    
-    //   
+    }    
 }
-
 function checkNumberInputSeatClick(){
     const numberInput = document.getElementById("number_input");
     const nextBtn = document.getElementById("next-btn");
@@ -154,5 +154,12 @@ function checkNumberInputSeatClick(){
         nextBtn.setAttribute("disabled",true);
         nextBtn.classList.replace("bg-[#1DD100]","bg-[#979b9638]");
     }
-
 }
+const continueBtn = document.getElementById("continue");
+continueBtn.addEventListener("click",function(){
+    const modal = document.getElementById("modal-section");
+    const body = document.querySelector("body");
+    modal.classList.add("hidden");
+    location.replace("index.html");
+
+})
