@@ -1,5 +1,5 @@
+const ticketArray = [];
 function getTicket(){
-    const ticketArray = [];
     const seatNumber = document.querySelectorAll(".seat-number");
     for(i = 0; i < seatNumber.length; i++){
         const currenElement = seatNumber[i];
@@ -8,6 +8,7 @@ function getTicket(){
             pushArray(currentValue,currenElement);
             totalCount();
             ticketSummery();
+            checkNumberInputSeatClick()
         });
     }
     function pushArray(seat,currenElement){
@@ -56,7 +57,6 @@ function ticketSummery(){
           <h1>550</h1>
         </div>                      
       </div>`;
-
     }).join("")}`;
     var total = 0;
     let leftSeatCount = 40;
@@ -69,19 +69,30 @@ function ticketSummery(){
     getDiscount(total);
 }
 function getDiscount(total){
+    if(ticketArray.length === 4){
     const discountApplyBtn = document.getElementById("discount-apply");
     const grandPrice = document.getElementById("grand-price");
     const discountInput = document.getElementById("discount_input");
     const invalidCoupon = document.getElementById("invalid_coupon");
+    const discountSection = document.getElementById("discount-section");
+    const discountprice = document.getElementById("discount-price");
+    const couponSection = document.getElementById("coupon");
     discountApplyBtn.addEventListener("click",function(){
         if(discountInput.value === "NEW15"){
             const discount = total / 100 * 15;
             grandPrice.innerText = total - discount; 
             invalidCoupon.classList.add("hidden")
+            discountSection.classList.remove("hidden");
+            discountprice.innerText = discount;
+            couponSection.classList.add("hidden");
+
         }else if(discountInput.value === "Couple 20"){
             const discount = total / 100 * 20;
             grandPrice.innerText = total - discount; 
             invalidCoupon.classList.add("hidden")
+            discountSection.classList.remove("hidden");
+            discountprice.innerText = discount;
+            couponSection.classList.add("hidden");
         }else{
             invalidCoupon.classList.remove("hidden")
         }
@@ -89,23 +100,59 @@ function getDiscount(total){
     grandPrice.innerText = total;
     discountApplyBtn.removeAttribute("disabled");
     discountApplyBtn.classList.replace("bg-[#979b9638]","bg-[#1DD100]");
+
+    }else{
+        const discountApplyBtn = document.getElementById("discount-apply");
+        const grandPrice = document.getElementById("grand-price");
+        const discountInput = document.getElementById("discount_input");
+        const invalidCoupon = document.getElementById("invalid_coupon");
+        const discountSection = document.getElementById("discount-section");
+        const discountprice = document.getElementById("discount-price");
+        const couponSection = document.getElementById("coupon");
+        grandPrice.innerText = total;
+        discountApplyBtn.setAttribute("disabled",true);
+        discountApplyBtn.classList.replace("bg-[#1DD100]","bg-[#979b9638]");
+        discountSection.classList.add("hidden")
+        invalidCoupon.classList.add("hidden")
+        couponSection.classList.remove("hidden")
+        // discountInput.value = "";
+        discountprice.innerText = total;
+    }
+    const grandPrice = document.getElementById("grand-price");
+    grandPrice.innerText = total;    
 }
-function finalPurchase(){
-    const nameInput = document.getElementById("name-input");
-    const numberInput = document.getElementById("number-input");
-    
-}
-
-
-
 
 
 }
 getTicket()
+function checkInput(input){
+    const nextBtn = document.getElementById("next-btn");
+    if(ticketArray.length > 0){
+        if(input.value.length > 0){           
+            nextBtn.removeAttribute("disabled");
+            nextBtn.classList.replace("bg-[#979b9638]","bg-[#1DD100]");
+            nextBtn.addEventListener("click",function(){
+                alert("yea hu")
+            });
+        }else{
+            nextBtn.setAttribute("disabled",true);
+            nextBtn.classList.replace("bg-[#1DD100]","bg-[#979b9638]");
+        }
+    }  
+    // 
+    
+    //   
+}
 
+function checkNumberInputSeatClick(){
+    const numberInput = document.getElementById("number_input");
+    const nextBtn = document.getElementById("next-btn");
+    if(ticketArray.length && numberInput.value !== ""){           
+        nextBtn.removeAttribute("disabled");
+        nextBtn.classList.replace("bg-[#979b9638]","bg-[#1DD100]");
+    }else{
+        nextBtn.setAttribute("disabled",true);
+        nextBtn.classList.replace("bg-[#1DD100]","bg-[#979b9638]");
+    }
 
-
-
-
-
-
+}
