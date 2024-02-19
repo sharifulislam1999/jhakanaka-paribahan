@@ -14,3 +14,9 @@
 html {
     scroll-behavior: smooth;
   }
+.home-banner{
+    background: linear-gradient(#030712ab, #03071200),url("../images/banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
