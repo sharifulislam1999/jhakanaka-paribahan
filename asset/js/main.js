@@ -28,7 +28,16 @@ function getTicket(){
                 seatStyle(currenElement);
             }
             if(ticketArray.length === 4){
-                alert("sorry you can't buy 4 ticket")
+                alert("You cannot purchase more than 4 tickets");
+                let total = 0;
+                let leftSeatCount = 40;
+                for(let i = 0; i < ticketArray.length; i++){
+                    total += 550;
+                    leftSeatCount--;
+                }
+                leftSeat.innerText = leftSeatCount;
+                totalPrice.innerText = total;
+                getDiscount(total);
             }
         }
     }
